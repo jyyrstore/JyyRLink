@@ -1,0 +1,760 @@
+@font-face{
+  font-family:'Anantha Signature';
+  src:url('Anantha%20Signature%20For%20Personal%20Use.ttf') format('truetype');
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      overflow-x:hidden;
+      position:relative;
+      background:#000;
+      padding:20px 15px 50px;
+    }
+    
+/* =========================
+   PURPLE PREMIUM INTRO
+========================== */
+
+#intro{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+
+  background:#06010d;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  overflow:hidden;
+
+  animation:introFade 2s ease forwards;
+  animation-delay:3s;
+}
+
+/* =========================
+   BACKGROUND
+========================== */
+
+.bg{
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+  circle at top,
+  rgba(125,0,255,.25),
+  #06010d 65%);
+}
+
+/* glow */
+
+.bg::before,
+.bg::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  filter:blur(140px);
+}
+
+.bg::before{
+  width:450px;
+  height:450px;
+
+  background:#7d00ff;
+
+  top:-150px;
+  left:-120px;
+
+  opacity:.35;
+
+  animation:float1 10s ease-in-out infinite;
+}
+
+.bg::after{
+  width:380px;
+  height:380px;
+
+  background:#00d9ff;
+
+  bottom:-140px;
+  right:-100px;
+
+  opacity:.18;
+
+  animation:float2 10s ease-in-out infinite;
+}
+
+/* =========================
+   PARTICLES
+========================== */
+
+.particles{
+  position:absolute;
+  inset:0;
+
+  background-image:
+  radial-gradient(
+  rgba(255,255,255,.08) 1px,
+  transparent 1px);
+
+  background-size:45px 45px;
+
+  opacity:.18;
+
+  animation:moveParticles 20s linear infinite;
+}
+
+/* =========================
+   FLASH EFFECT
+========================== */
+
+.flash{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+  120deg,
+  transparent,
+  rgba(255,255,255,.05),
+  transparent
+  );
+
+  animation:flashMove 4s linear infinite;
+}
+
+/* =========================
+   CONTENT
+========================== */
+
+.intro-content{
+  position:relative;
+  z-index:5;
+
+  text-align:center;
+
+  animation:zoomIn 2s ease;
+}
+
+/* =========================
+   LOGO
+========================== */
+
+.logo-ring{
+  width:170px;
+  height:170px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  padding:5px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #00d9ff,
+  #7d00ff,
+  #b700ff
+  );
+
+  animation:pulse 4s ease-in-out infinite;
+
+  box-shadow:
+  0 0 20px rgba(125,0,255,.45),
+  0 0 50px rgba(0,229,255,.12);
+
+  transition:all .6s ease;
+}
+
+.intro-logo{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  border:5px solid #06010d;
+}
+
+/* =========================
+   INTRO NAME IMAGE
+========================== */
+
+.intro-name{
+  width:200px;
+  margin-top:15px;
+  margin-left:-20px;
+
+  animation:
+  nameFloat 4s ease-in-out infinite;
+
+  filter:
+  drop-shadow(0 0 18px rgba(125,0,255,.45))
+  drop-shadow(0 0 35px rgba(36,75,255,.22));
+
+}
+
+@keyframes nameFloat{
+
+  0%,100%{
+    transform:
+    translateY(0)
+    scale(1);
+  }
+
+  50%{
+    transform:
+    translateY(-4px)
+    scale(1.02);
+  }
+
+}
+
+/* =========================
+   LINE
+========================== */
+
+.intro-line{
+  width:220px;
+  height:3px;
+
+  margin:30px auto 0;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+  90deg,
+  transparent,
+  #7d00ff,
+  #00d9ff,
+  transparent
+  );
+
+  animation:lineGlow 3s ease-in-out infinite;
+}
+
+/* =========================
+   ANIMATIONS
+========================== */
+
+@keyframes introFade{
+
+  0%{
+    opacity:1;
+    filter:blur(0);
+  }
+
+  100%{
+    opacity:0;
+    visibility:hidden;
+    filter:blur(12px);
+  }
+
+}
+
+@keyframes zoomIn{
+
+  from{
+    transform:
+    scale(1.15);
+    opacity:0;
+  }
+
+  to{
+    transform:
+    scale(1);
+    opacity:1;
+  }
+
+}
+
+@keyframes pulse{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.04);
+  }
+
+}
+
+@keyframes titleGlow{
+
+  0%,100%{
+    text-shadow:
+    0 0 15px rgba(125,0,255,.3);
+  }
+
+  50%{
+    text-shadow:
+    0 0 30px rgba(125,0,255,.6),
+    0 0 45px rgba(0,217,255,.2);
+  }
+
+}
+
+@keyframes lineGlow{
+
+  0%,100%{
+    opacity:.5;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+}
+
+@keyframes flashMove{
+
+  from{
+    transform:translateX(-100%);
+  }
+
+  to{
+    transform:translateX(100%);
+  }
+
+}
+
+@keyframes float1{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(35px);
+  }
+
+}
+
+@keyframes float2{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-35px);
+  }
+
+}
+
+@keyframes moveParticles{
+
+  from{
+    transform:
+    translateY(0)
+    scale(1);
+  }
+
+  to{
+    transform:
+    translateY(-120px)
+    scale(1.05);
+  }
+
+}
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+body::before{
+  content:'';
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background:url('https://i.ibb.co.com/G3ctSzhH/BEGROUND-1.png') center center/cover no-repeat;
+  
+  z-index:-3;
+
+  /* FIX UTAMA */
+  background-attachment: fixed;
+
+  /* HAPUS ini */
+  /* transform:scale(1.05); */
+
+  filter:brightness(.8);
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  z-index:-2;
+}
+
+    /* =========================
+       CONTAINER
+    ========================== */
+
+    .container{
+      width:100%;
+      max-width:420px;
+      position:relative;
+    }
+
+    /* =========================
+       TOP BANNER
+    ========================== */
+
+.banner{
+  width:100%;
+  position:relative;
+  border-radius:35px;
+  overflow:visible;
+
+  animation:bannerGlow 4s linear infinite;
+
+  filter:
+  drop-shadow(0 0 10px rgba(36,75,255,.7))
+  drop-shadow(0 0 25px rgba(0,255,255,.18));
+}
+
+.banner video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border-radius:35px;
+}
+
+@keyframes bannerGlow{
+
+  0%{
+    filter:
+    drop-shadow(0 0 10px rgba(36,75,255,.7))
+    drop-shadow(0 0 25px rgba(0,255,255,.18));
+  }
+
+  50%{
+    filter:
+    drop-shadow(0 0 14px rgba(36,75,255,.7))
+    drop-shadow(0 0 30px rgba(0,255,255,.25));
+  }
+
+  100%{
+    filter:
+    drop-shadow(0 0 10px rgba(36,75,255,.7))
+    drop-shadow(0 0 25px rgba(0,255,255,.18));
+  }
+
+}
+
+    /* =========================
+       PROFILE
+    ========================== */
+    
+.profile{
+  width:150px;
+  height:150px;
+  position:absolute;
+  left:50%;
+  bottom:-70px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  padding:3px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #00f0ff,
+  #004cff,
+  #7d00ff,
+  #ff00c8
+  );
+
+  box-shadow:
+  0 0 5px #003cff,
+  0 0 20px rgba(36,75,255,.7),
+  0 0 40px rgba(36,75,255,.7);
+
+  animation:profileGlow 3s ease-in-out infinite;
+}
+
+.profile img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid #000;
+  background:#000;
+}
+
+@keyframes profileGlow{
+
+  0%{
+    box-shadow:
+    0 0 8px ##003cff,
+    0 0 18px rgba(36,75,255,.7),
+    0 0 35px rgba(0,225,255,.18);
+  }
+
+  50%{
+    box-shadow:
+    0 0 12px #00e1ff,
+    0 0 24px rgba(36,75,255,.7),
+    0 0 45px rgba(0,225,255,.25);
+  }
+
+  100%{
+    box-shadow:
+    0 0 8px ##003cff,
+    0 0 18px rgba(36,75,255,.7),
+    0 0 35px rgba(0,225,255,.18);
+  }
+
+}
+
+/* =========================
+   BIO TEXT
+========================== */
+
+.bio{
+  width:100%;
+  margin-top:78px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.bio h1{
+  font-family:'Anantha Signature', cursive;
+  font-size:10px; /* atau 20px */
+  font-weight:normal;
+  color:#cfcfcf;
+  margin:0;
+
+  text-shadow:
+  0 0 6px rgba(255,255,255,.35),
+  0 0 14px rgba(180,220,255,.25),
+  0 0 24px rgba(0,225,255,.15);
+
+  opacity:0;
+  transform:translateY(15px);
+
+  animation:textFade .8s ease forwards;
+  animation-delay:3.5s;
+}
+
+.bio p{
+  font-family:'Anantha Signature', cursive;
+  font-size:20px;
+  font-weight:normal;
+  color:#cfcfcf;
+  margin-top:14px;
+  
+    text-shadow:
+  0 0 6px rgba(255,255,255,.35),
+  0 0 14px rgba(180,220,255,.25),
+  0 0 24px rgba(0,225,255,.15);
+
+  opacity:0;
+  transform:translateY(15px);
+
+  animation:textFade .8s ease forwards;
+  animation-delay:3.8s; /* Muncul setelah h1 */
+}
+
+@keyframes textFade{
+  0%{
+    opacity:0;
+    transform:translateY(15px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.links{
+  margin-top:35px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  position:relative;
+  background:transparent;
+  padding:0;
+  margin:0;
+  line-height:0;
+  overflow:visible;
+  cursor:pointer;
+
+  opacity:0;
+  transform:translateY(60px);
+
+  animation:btnUp .6s ease-out forwards;
+
+  transition:transform .2s ease;
+}
+
+/* Muncul satu-satu */
+.btn:nth-child(1){animation-delay:3.70s;}
+.btn:nth-child(2){animation-delay:3.85s;}
+.btn:nth-child(3){animation-delay:4.00s;}
+.btn:nth-child(4){animation-delay:4.15s;}
+.btn:nth-child(5){animation-delay:4.30s;}
+.btn:nth-child(6){animation-delay:4.45s;}
+
+.btn img{
+  width:100%;
+  margin-top:-30px;
+  display:block;
+  background:transparent;
+
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+/* Hover (PC) */
+.btn:hover img{
+  transform:scale(1.02);
+
+  filter:
+    drop-shadow(0 0 5px rgba(0,225,255,.12))
+    drop-shadow(0 0 10px rgba(0,225,255,.08));
+}
+
+/* Saat disentuh (HP) */
+.btn:active img{
+  transform:scale(1.04);
+
+  filter:
+    drop-shadow(0 0 12px rgba(0,225,255,.30))
+    drop-shadow(0 0 22px rgba(0,225,255,.18));
+}
+
+/* Animasi muncul dari bawah */
+@keyframes btnUp{
+
+  0%{
+    opacity:0;
+    transform:translateY(60px) scale(.95);
+  }
+
+  70%{
+    opacity:1;
+    transform:translateY(-5px) scale(1.02);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes btnIntro{
+  0%{
+    opacity:0;
+    transform:translateY(40px) scale(.9);
+    filter:blur(8px);
+  }
+
+  70%{
+    opacity:1;
+    transform:translateY(-6px) scale(1.03);
+    filter:blur(0);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+}
+
+@keyframes btnFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-3px);
+  }
+}
+
+@keyframes shine{
+  from{
+    transform:translateX(-150%);
+  }
+  to{
+    transform:translateX(150%);
+  }
+}
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer{
+      margin-top:30px;
+      text-align:center;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+      letter-spacing:4px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:480px){
+
+      .profile{
+        width:130px;
+        height:130px;
+        bottom:-60px;
+      }
+
+      .bio{
+        margin-top:82px;
+      }
+
+      .bio h1{
+        font-size:22px;
+      }
+
+    }
+
+  
