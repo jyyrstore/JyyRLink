@@ -531,6 +531,13 @@ body{
   user-select: none;
 }
 
+.video-lock {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: transparent;
+}
+
 @keyframes bannerGlow{
 
   0%{
