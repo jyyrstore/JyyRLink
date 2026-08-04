@@ -528,6 +528,7 @@ body{
   object-fit:cover;
   object-position:center;
   border-radius:35px;
+  user-select: none;
 }
 
 @keyframes bannerGlow{
