@@ -1,3 +1,8 @@
+/* ========================================
+   LOCK DOWNLOAD
+======================================== */
+
+document.addEventListener("contextmenu", e => e.preventDefault());
 
 /* ========================================
    FUTURISTIC PARTICLES
